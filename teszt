@@ -1,0 +1,19 @@
+Bemenet: x − T tömb, n − egész (tömb mérete), P − logikai
+Kimenet: y 1 − T tömb, db 1 − egész, y 2 − T tömb, db 2 − egész
+
+függvény Szétválogatás(x, n, P)
+         y 1 ← Létrehoz(T)[n]
+         y 2 ← Létrehoz(T)[n]
+         db 1 ← 0
+         db 2 ← 0
+         ciklus i ← 1-től n-ig
+                ha P (x[i]) akkor
+                   db 1 ← db 1 + 1
+                   y 1 [db 1 ] ← x[i]
+                különben
+                    db 2 ← db 2 + 1
+                    y 2 [db 2 ] ← x[i]
+                elágazás vége
+         ciklus vége
+         vissza(y 1 , db 1 , y 2 , db 2 )
+függvény vége
