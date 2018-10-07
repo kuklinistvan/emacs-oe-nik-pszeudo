@@ -7,8 +7,21 @@
 
 ;;; Code:
 
-(defvar oe-nik-pszeudo-highlights
-      '(("(?<=függvény\s).*(?=\\(.*\\))" . font-lock-function-name-face)))
+(defvar oe-nik-pszeudo-highlights)
+
+(setq oe-nik-pszeudo-highlights
+      (let* (
+            (x-keywords '("függvény vége" "függvény" "ciklus vége" "ciklus" "elágazás vége" "különben" "ha" "Létrehoz" "vissza"))
+            (x-types '("egész" "logikai"))
+            (x-keywords-regexp (regexp-opt x-keywords 'words))
+            (x-types-regexp (regexp-opt x-types 'words))
+            )
+
+        `(
+          ("\\(függvény\\)\s\\(.*\\)\(.*\)" . (2 font-lock-function-name-face))
+          (,x-types-regexp . font-lock-type-face)
+          (,x-keywords-regexp . font-lock-keyword-face)
+          )))
 
 (define-derived-mode oe-nik-pszeudo-mode fundamental-mode "oe-nik-pszeudo"
   "Majore Mode OE-NIK pszeudó kód szerkesztéséhez."
