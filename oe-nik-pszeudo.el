@@ -11,16 +11,18 @@
 
 (setq oe-nik-pszeudo-highlights
       (let* (
-            (x-keywords '("függvény vége" "függvény" "ciklus vége" "ciklus" "elágazás vége" "különben" "ha" "Létrehoz" "vissza"))
-            (x-types '("egész" "logikai"))
+            (x-keywords '("függvény vége" "függvény" "ciklus vége" "ciklus" "elágazás vége" "különben" "ha" "Létrehoz" "vissza" "akkor"))
+            (x-types '("egész" "logikai" "T"))
             (x-keywords-regexp (regexp-opt x-keywords 'words))
             (x-types-regexp (regexp-opt x-types 'words))
             )
 
         `(
           ("\\(függvény\\)\s\\(.*\\)\(.*\)" . (2 font-lock-function-name-face))
+          ("//.*" . font-lock-comment-face)
           (,x-types-regexp . font-lock-type-face)
           (,x-keywords-regexp . font-lock-keyword-face)
+
           )))
 
 (define-derived-mode oe-nik-pszeudo-mode fundamental-mode "oe-nik-pszeudo"

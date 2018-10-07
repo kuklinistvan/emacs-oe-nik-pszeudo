@@ -1,5 +1,5 @@
-Bemenet: x − T tömb, n − egész (tömb mérete), P − logikai
-Kimenet: y 1 − T tömb, db 1 − egész, y 2 − T tömb, db 2 − egész
+// Bemenet: x − T tömb, n − egész (tömb mérete), P − logikai
+// Kimenet: y 1 − T tömb, db 1 − egész, y 2 − T tömb, db 2 − egész
 
 függvény Szétválogatás(x, n, P)
          y1 ← Létrehoz(T)[n]
@@ -15,5 +15,5 @@ függvény Szétválogatás(x, n, P)
                     y2[db2] ← x[i]
                 elágazás vége
          ciklus vége
-         vissza(y1 , db1 , y2 , db2)
+         vissza(y1 , db1 ,y2 ,db2)
 függvény vége
